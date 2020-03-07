@@ -1,0 +1,15 @@
+{
+    "version": "2.7.11",
+    "description": "Merge and diff SKK Dict.",
+    "homepage": "https://github.com/nathancorvussolis/meskkdic",
+    "checkver": "github",
+    "bin": [
+        "meskkdic.exe",
+        "meskkdicw.exe"
+    ],
+    "license": "MS-PL",
+    "url": "https://github.com/nathancorvussolis/meskkdic/releases/download/2.3.0/meskkdic-2.3.0.zip",
+    "autoupdate": {
+        "url": "https://github.com/nathancorvussolis/meskkdic/releases/download/$version/meskkdic-$version.zip"
+    }
+}

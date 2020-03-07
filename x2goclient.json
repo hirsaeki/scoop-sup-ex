@@ -1,0 +1,27 @@
+{
+    "homepage": "https://wiki.x2go.org/doku.php/download:start",
+    "description": "X2go Client",
+    "license": "GPL-2.0",
+    "version": "4.1.2.2-2020.02.13",
+    "url": "https://code.x2go.org/releases/binary-win32/x2goclient/releases/4.1.2.2-2020.02.13/x2goclient-4.1.2.2-2020.02.13-setup.exe#/dl.7z",
+    "hash": "227857330e14cf88c88159c5439c914ce2e4170c7aa29149641d5df11d1745f0",
+    "post_install": "Remove-Item (Join-Path $dir '$PLUGINSDIR') -Recurse -ea 0",
+    "shortcuts": [
+        [
+            "x2goclient.exe",
+            "X2Go client"
+        ]
+    ],
+    "checkver": {
+        "url": "https://code.x2go.org/releases/binary-win32/x2goclient/releases/",
+        "regex": ">([\\d.-]+)/</a></td>",
+        "reverse": true
+    },
+    "autoupdate": {
+        "url": "https://code.x2go.org/releases/binary-win32/x2goclient/releases/$version/x2goclient-$version-setup.exe#/dl.7z",
+        "hash": {
+            "url": "https://code.x2go.org/releases/binary-win32/x2goclient/releases/$version/x2goclient-$version-setup.exe.sha256",
+            "find": "$sha256"
+        }
+    }
+}

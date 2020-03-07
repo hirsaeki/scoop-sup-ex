@@ -1,0 +1,31 @@
+{
+    "homepage": "https://github.com/Nevcairiel/LAVFilters/",
+    "description": "Open-Source DirectShow Media Splitter and Decoders ",
+    "license": "GPL-2.0",
+    "version": "0.74.1",
+    "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/0.74.1/LAVFilters-0.74.1-x64.zip",
+    "hash": "af87187386028aae1606604a062d63c8af7eeef5fe5b9c85e50ed675efebeeb9",
+    "depends": "sudo",
+    "pre_install": [
+        "ForEach($file in Get-ChildItem $dir\\ -Filter install_*.bat) {(Get-Content $dir\\$file) | ForEach-Object {$_ -replace \"regsvr32.exe LAV\",\"regsvr32.exe /s LAV\"} | Out-File -Encoding oem $dir\\$file}",
+        "ForEach($file in Get-ChildItem $dir\\ -Filter uninstall_*.bat) {(Get-Content $dir\\$file) | ForEach-Object {$_ -replace \"regsvr32.exe /u LAV\",\"regsvr32.exe /u /s LAV\"} | Out-File -Encoding oem $dir\\$file}"
+    ],
+    "installer": {
+        "script": [
+            "gsudo $dir\\install_audio.bat",
+            "gsudo $dir\\install_video.bat",
+            "gsudo $dir\\install_splitter.bat"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "gsudo $dir\\uninstall_audio.bat",
+            "gsudo $dir\\uninstall_video.bat",
+            "gsudo $dir\\uninstall_splitter.bat"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/$version/LAVFilters-$version-x64.zip"
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "2.1.1",
+  "url": "https://www.vector.co.jp/download/file/win95/util/fh526847.html#/nkf.exe",
+  "bin": "nkf.exe",
+  "pre_install": [
+    "cd $dir",
+    "curl.exe -OL \"http://ftp.vector.co.jp/52/68/2195/nkfwin.zip\"",
+    "7z.exe -y e *.zip \"vc2005\\win32(98,Me,NT,2000,XP,Vista,7)ISO-2022-JP\\nkf.exe\"",
+    "Remove-Item *.zip"
+  ]
+}

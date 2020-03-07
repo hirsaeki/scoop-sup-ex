@@ -1,0 +1,33 @@
+{
+    "version": "1.5.3",
+    "description": "OpenConnect-GUI VPN Client",
+    "homepage": "https://github.com/openconnect/openconnect-gui",
+    "checkver": "github",
+    "depend": [
+        "openvpn",
+        "vcredist"
+    ],
+    "pre_install": [
+        "if(!(test-path \"$dir\\vpnc_customenv.txt\")) { New-Item \"$dir\\vpnc_customenv.txt\" | Out-Null }"
+    ],
+    "bin": [
+        "openconnect-gui.exe",
+        "openconnect.exe"
+    ],
+    "persist": [
+        "vpnc-script.js",
+        "vpnc_customenv.txt"
+    ],
+    "shortcuts": [
+        ["openconnect-gui.exe", "OpenConnect-GUI VPN Client"]
+    ],
+    "license": "GPLv2",
+    "url": "https://github.com/openconnect/openconnect-gui/releases/download/v1.5.3/openconnect-gui-1.5.3-win32.exe#/dl.7z",
+    "autoupdate": {
+        "url": "https://github.com/openconnect/openconnect-gui/releases/download/v$version/openconnect-gui-$version-win32.exe#/dl.7z",
+        "hash": {
+            "url": "https://github.com/openconnect/openconnect-gui/releases/download/v$version/openconnect-gui-$version-win32.exe.sha512",
+            "find": "$sha512"
+        }
+    }
+}

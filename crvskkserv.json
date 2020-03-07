@@ -1,0 +1,46 @@
+{
+    "version": "2.7.11",
+    "description": "win32 skk server.",
+    "homepage": "https://github.com/nathancorvussolis/crvskkserv",
+    "checkver": "github",
+    "bin": "crvskkserv.exe",
+    "pre_install": [
+        "if(!(test-path \"$dir\\crvskkserv.ini\")) { New-Item \"$dir\\crvskkserv.ini\" | Out-Null }"
+    ],
+    "depends": [
+        "ruby",
+        "skktools"
+    ],
+    "persist": [
+        "crvskkserv.ini",
+        "DICTS"
+    ],
+    "post_install": [
+        "cd $dir\\DICTS",
+        "curl.exe -OL https://skk-dev.github.io/dict/SKK-JISYO.L.gz",
+        "curl.exe -OL https://skk-dev.github.io/dict/SKK-JISYO.jinmei.gz",
+        "curl.exe -OL https://skk-dev.github.io/dict/SKK-JISYO.geo.gz",
+        "curl.exe -OL https://skk-dev.github.io/dict/SKK-JISYO.station.gz",
+        "curl.exe -OL https://skk-dev.github.io/dict/SKK-JISYO.propernoun.gz",
+        "curl.exe -o hatena.zip -L \"http://web-apps.nbookmark.com/niconico-dic/download.php?keyword=hatena&warning=remove&place=remove&duped=remove&comment=remove&output=google_pc\"",
+        "curl.exe -o niconico.zip -L \"http://web-apps.nbookmark.com/niconico-dic/download.php?keyword=niconico&warning=remove&place=remove&duped=remove&comment=remove&output=google_pc\"",
+        "7z.exe -y e *.gz",
+        "7z.exe -y e *.zip",
+        "Remove-Item *.gz",
+        "Remove-Item *.zip",
+        "$src = @'\nrequire 'nkf'\r\n\r\nclass String\r\n  # borrowed from http:\/\/openlab.jp\/skk\/skk\/tools\/filters\/skkdictools.rb\r\n  def concatify\r\n    #if !(\/^([-\\w]+.*)$\/ =~ self) && (\/[;\\r\\n\\\/\\\"]\/ =~ self)\r\n    # []\u306E\u51E6\u7406\u3092\u3057\u306A\u3044\u3068skkdic-expr2\u304CSEGV\u308B\u3002\r\n    # see http:\/\/d.hatena.ne.jp\/rubikitch\/20091022\/1256186001\r\n    if \/[\\[\\];\\r\\n\\\/\\\"]\/ =~ self\r\n      tmp = self.gsub(\/;\/, '\\\\\\073').gsub(\/\\\/\/, '\\\\\\057').gsub(\/\\r\/, '\\\\r').gsub(\/\\n\/, '\\\\n').gsub(\/\"\/, '\\\\\"').gsub(\/[\\[\\]]\/, '')\r\n      return '(concat \"' + tmp + '\")'\r\n    else\r\n      return self\r\n    end\r\n  end\r\nend\r\n\r\nARGF.each do |line|\r\n  line.chomp!\r\n  furigana, keyword, shubetsu = line.split(\/\\t\/, 3)\r\n  if furigana.empty?\r\n    next # \u3075\u308A\u304C\u306A\u304C\u306A\u3044\u30AD\u30FC\u30EF\u30FC\u30C9\u3092\u7121\u8996\r\n  end\r\n  if furigana == keyword\r\n    next # \u3072\u3089\u304C\u306A\u3060\u3051\u306E\u30AD\u30FC\u30EF\u30FC\u30C9\u3092\u7121\u8996\r\n  end\r\n  if furigana == NKF.nkf('-Ee -m0 --hiragana', keyword)\r\n    next # \u30AB\u30BF\u30AB\u30CA\u8A9E\u306F\u7121\u8996\r\n  end\r\n  puts \"#{furigana} \/#{keyword.gsub(\/&amp;\/, '&').concatify}\/\"\r\nend\n'@; $byte = [System.Text.Encoding]::UTF8.GetBytes($src); [System.IO.File]::WriteAllBytes(\"$dir\\DICTS\\googleime2skk.rb\",$byte)",
+        "ls -Name *.txt|%{$command = @\"\nnkf -s $_ |ruby googleime2skk.rb|nkf -e -x > $_.dic\n\"@; cmd.exe /C $command}",
+        "Remove-Item *.txt",
+        "$args = (ls -Name -Exclude \"*.rb\") -Join \" + \"; $command = @\"\n skkdic-expr2 -o SKK-JISYO.LL $args\n\"@; cmd.exe /C $command"
+
+
+    ],
+    "shortcuts": [
+        ["crvskkserv.exe", "crvskkserv"]
+    ],
+    "license": "MS-PL",
+    "url": "https://github.com/nathancorvussolis/crvskkserv/releases/download/2.2.0/crvskkserv-2.2.0.zip",
+    "autoupdate": {
+        "url": "https://github.com/nathancorvussolis/crvskkserv/releases/download/$version/crvskkserv-$version.zip"
+    }
+}

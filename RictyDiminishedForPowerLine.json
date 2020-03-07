@@ -1,0 +1,22 @@
+{
+    "homepage": "https://github.com/mzyy94/RictyDiminished-for-Powerline",
+    "description": "Ricty Diminished w/ Powerline patched",
+    "license": "OFL-1.1",
+    "version": "3.2.4-powerline-early-2016",
+    "url": "https://github.com/mzyy94/RictyDiminished-for-Powerline/archive/3.2.4-powerline-early-2016.zip",
+    "depends": "portableapps",
+    "installer": {
+        "script": [
+            "New-Item -ItemType Directory $scoopdir\\persist\\portableapps\\PortableApps\\PortableApps.com\\Data\\Fonts -ea 0",
+            "Copy-Item $dir\\RictyDiminished-for-Powerline-$version\\powerline-fontpatched\\*.ttf $scoopdir\\persist\\portableapps\\PortableApps\\PortableApps.com\\Data\\Fonts",
+            "Get-Process PortableAppsPlatform -ea 0|%{$_pid = $_.Id; $cmdline = (Get-WMIObject Win32_Process -Filter \"Handle=$_pid\"); $_.Kill(); $_.WaitforExit()}; if( $cmdline -ne $null ){Start-Process -FilePath $cmdline.Split(' ')[0] -ArgumentList $cmdline.Split(' ')[1]}"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "Get-Process PortableAppsPlatform -ea 0|%{$_pid = $_.Id; $cmdline = (Get-WMIObject Win32_Process -Filter \"Handle=$_pid\"); $_.Kill(); $_.WaitforExit()}",
+            "Remove-Item \"$scoopdir\\persist\\portableapps\\PortableApps\\PortableApps.com\\Data\\Fonts\\Ricty Diminished*Powerline.ttf\"",
+            "if( $cmdline -ne $null ){Start-Process -FilePath $cmdline.Split(' ')[0] -ArgumentList $cmdline.Split(' ')[1]}"
+        ]
+    }
+}
