@@ -1,0 +1,31 @@
+{
+    "version": "8.0",
+    "description": "Spice virtual machine viewer",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x64-8.0.msi",
+            "hash": "9653601675d7ab20fabdb5b3ce9568d2c798141adb6f50a5141d1112087259e4"
+        },
+        "32bit": {
+            "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x86-8.0.msi",
+            "hash": "5cbe42694de5c1df7194619b9eae8608750b3cecedb564bc63f66cbe0c1f737d"
+        }
+    },
+    "homepage": "https://virt-manager.org/download/",
+    "checkver": {
+        "url": "",
+        "regex": "virt-viewer ([\\d.-]+)</a>",
+        "reverse": true
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x64-$version.msi"
+            },
+            "32bit": {
+                "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x86-$version.msi"
+            }
+        }
+    }
+}
