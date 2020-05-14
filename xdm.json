@@ -9,7 +9,7 @@
     "bin": "xdman.jar",
     "shortcuts": [
         [
-            "xdman.jar",
+            "java-runtime\\bin\\java.exe -jar xdman.jar",
             "Xtreme Download Manager"
         ]
     ],
