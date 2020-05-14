@@ -9,8 +9,9 @@
     "bin": "xdman.jar",
     "shortcuts": [
         [
-            "java-runtime\\bin\\java.exe -jar xdman.jar",
-            "Xtreme Download Manager"
+            "java-runtime\\bin\\java.exe",
+            "Xtreme Download Manager",
+            "-jar xdman.jar"
         ]
     ],
     "checkver": {
