@@ -9,6 +9,7 @@
     ],
     "license": "MS-PL",
     "url": "https://github.com/nathancorvussolis/meskkdic/releases/download/2.3.0/meskkdic-2.3.0.zip",
+    "hash": "",
     "autoupdate": {
         "url": "https://github.com/nathancorvussolis/meskkdic/releases/download/$version/meskkdic-$version.zip"
     }

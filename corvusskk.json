@@ -5,6 +5,7 @@
     "checkver": "github",
     "license": "MS-PL",
     "url": "https://github.com/nathancorvussolis/corvusskk/releases/download/2.7.11/corvusskk-2.7.11.exe#/setup.exe",
+    "hash": "",
     "installer": {
         "file": "setup.exe",
         "args": [
