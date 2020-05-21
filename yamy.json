@@ -26,7 +26,7 @@
     ],
     "checkver": {
         "url": "https://ja.osdn.net/projects/yamy/",
-        "regex": "/projects/yamy/releases/(?<release>[\\d]+)\">yamy ([\\d.])"
+        "regex": "/projects/yamy/releases/(?<release>[\\d]+)\">yamy ([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://ja.osdn.net/frs/redir.php?m=jaist&f=yamy%2F$release%2Fyamy-$version.zip#/dl.zip",
