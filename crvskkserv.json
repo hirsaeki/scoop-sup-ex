@@ -1,12 +1,10 @@
 {
-    "version": "2.7.11",
+    "version": "2.2.0",
     "description": "win32 skk server.",
     "homepage": "https://github.com/nathancorvussolis/crvskkserv",
     "checkver": "github",
     "bin": "crvskkserv.exe",
-    "pre_install": [
-        "if(!(test-path \"$dir\\crvskkserv.ini\")) { New-Item \"$dir\\crvskkserv.ini\" | Out-Null }"
-    ],
+    "pre_install": "if(!(test-path \"$dir\\crvskkserv.ini\")) { New-Item \"$dir\\crvskkserv.ini\" | Out-Null }",
     "depends": [
         "ruby",
         "skktools"
@@ -28,19 +26,56 @@
         "7z.exe -y e *.zip",
         "Remove-Item *.gz",
         "Remove-Item *.zip",
-        "$src = @'\nrequire 'nkf'\r\n\r\nclass String\r\n  # borrowed from http:\/\/openlab.jp\/skk\/skk\/tools\/filters\/skkdictools.rb\r\n  def concatify\r\n    #if !(\/^([-\\w]+.*)$\/ =~ self) && (\/[;\\r\\n\\\/\\\"]\/ =~ self)\r\n    # []\u306E\u51E6\u7406\u3092\u3057\u306A\u3044\u3068skkdic-expr2\u304CSEGV\u308B\u3002\r\n    # see http:\/\/d.hatena.ne.jp\/rubikitch\/20091022\/1256186001\r\n    if \/[\\[\\];\\r\\n\\\/\\\"]\/ =~ self\r\n      tmp = self.gsub(\/;\/, '\\\\\\073').gsub(\/\\\/\/, '\\\\\\057').gsub(\/\\r\/, '\\\\r').gsub(\/\\n\/, '\\\\n').gsub(\/\"\/, '\\\\\"').gsub(\/[\\[\\]]\/, '')\r\n      return '(concat \"' + tmp + '\")'\r\n    else\r\n      return self\r\n    end\r\n  end\r\nend\r\n\r\nARGF.each do |line|\r\n  line.chomp!\r\n  furigana, keyword, shubetsu = line.split(\/\\t\/, 3)\r\n  if furigana.empty?\r\n    next # \u3075\u308A\u304C\u306A\u304C\u306A\u3044\u30AD\u30FC\u30EF\u30FC\u30C9\u3092\u7121\u8996\r\n  end\r\n  if furigana == keyword\r\n    next # \u3072\u3089\u304C\u306A\u3060\u3051\u306E\u30AD\u30FC\u30EF\u30FC\u30C9\u3092\u7121\u8996\r\n  end\r\n  if furigana == NKF.nkf('-Ee -m0 --hiragana', keyword)\r\n    next # \u30AB\u30BF\u30AB\u30CA\u8A9E\u306F\u7121\u8996\r\n  end\r\n  puts \"#{furigana} \/#{keyword.gsub(\/&amp;\/, '&').concatify}\/\"\r\nend\n'@; $byte = [System.Text.Encoding]::UTF8.GetBytes($src); [System.IO.File]::WriteAllBytes(\"$dir\\DICTS\\googleime2skk.rb\",$byte)",
-        "ls -Name *.txt|%{$command = @\"\nnkf -s $_ |ruby googleime2skk.rb|nkf -e -x > $_.dic\n\"@; cmd.exe /C $command}",
+        "$src = @'
+require 'nkf'
+
+class String
+  # borrowed from http://openlab.jp/skk/skk/tools/filters/skkdictools.rb
+  def concatify
+    #if !(/^([-\\w]+.*)$/ =~ self) && (/[;\\r\\n\\/\\\"]/ =~ self)
+    # []の処理をしないとskkdic-expr2がSEGVる。
+    # see http://d.hatena.ne.jp/rubikitch/20091022/1256186001
+    if /[\\[\\];\\r\\n\\/\\\"]/ =~ self
+      tmp = self.gsub(/;/, '\\\\\\073').gsub(/\\//, '\\\\\\057').gsub(/\\r/, '\\\\r').gsub(/\\n/, '\\\\n').gsub(/\"/, '\\\\\"').gsub(/[\\[\\]]/, '')
+      return '(concat \"' + tmp + '\")'
+    else
+      return self
+    end
+  end
+end
+
+ARGF.each do |line|
+  line.chomp!
+  furigana, keyword, shubetsu = line.split(/\\t/, 3)
+  if furigana.empty?
+    next # ふりがながないキーワードを無視
+  end
+  if furigana == keyword
+    next # ひらがなだけのキーワードを無視
+  end
+  if furigana == NKF.nkf('-Ee -m0 --hiragana', keyword)
+    next # カタカナ語は無視
+  end
+  puts \"#{furigana} /#{keyword.gsub(/&amp;/, '&').concatify}/\"
+end
+'@; $byte = [System.Text.Encoding]::UTF8.GetBytes($src); [System.IO.File]::WriteAllBytes(\"$dir\\DICTS\\googleime2skk.rb\",$byte)",
+        "ls -Name *.txt|%{$command = @\"
+nkf -s $_ |ruby googleime2skk.rb|nkf -e -x > $_.dic
+\"@; cmd.exe /C $command}",
         "Remove-Item *.txt",
-        "$args = (ls -Name -Exclude \"*.rb\") -Join \" + \"; $command = @\"\n skkdic-expr2 -o SKK-JISYO.LL $args\n\"@; cmd.exe /C $command"
-
-
+        "$args = (ls -Name -Exclude \"*.rb\") -Join \" + \"; $command = @\"
+ skkdic-expr2 -o SKK-JISYO.LL $args
+\"@; cmd.exe /C $command"
     ],
     "shortcuts": [
-        ["crvskkserv.exe", "crvskkserv"]
+        [
+            "crvskkserv.exe",
+            "crvskkserv"
+        ]
     ],
     "license": "MS-PL",
     "url": "https://github.com/nathancorvussolis/crvskkserv/releases/download/2.2.0/crvskkserv-2.2.0.zip",
-    "hash": "",
+    "hash": "6cdb66862c56f87a19bae32f9b6cdf4314060a5b83be65df11a25505cfcd8830",
     "autoupdate": {
         "url": "https://github.com/nathancorvussolis/crvskkserv/releases/download/$version/crvskkserv-$version.zip"
     }
