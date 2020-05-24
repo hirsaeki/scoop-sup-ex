@@ -38,7 +38,7 @@
         "file": "uninstall.bat",
         "script": [
             "cd $dir",
-            ".\\install.bat"
+            ".\\uninstall.bat"
         ]
     }
 }
