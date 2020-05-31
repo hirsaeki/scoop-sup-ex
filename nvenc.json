@@ -1,13 +1,13 @@
 {
-    "version": "5.02",
+    "version": "5.03",
     "description": "nvencc",
     "homepage": "https://github.com/rigaya/NVEnc",
     "checkver": "github",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/rigaya/NVEnc/releases/download/5.02/NVEncC_5.02_x64.7z",
-            "hash": "d18a2cf5e08d5aa578b494b9cb001f23fb0a12423f48a0a0e1f591bf68231e5b",
+            "url": "https://github.com/rigaya/NVEnc/releases/download/5.03/NVEncC_5.03_x64.7z",
+            "hash": "313d62d8051deac9645622447ba4a124ab8085b9336ceeee2d3446d218815bde",
             "bin": [
                 [
                     "NVEncC64.exe",
@@ -16,8 +16,8 @@
             ]
         },
         "32bit": {
-            "url": "https://github.com/rigaya/NVEnc/releases/download/5.02/NVEncC_5.02_Win32.7z",
-            "hash": "0cc48437dbd62db4bc50142dae2377399291a089ddde03b9381f6d8c849972c1",
+            "url": "https://github.com/rigaya/NVEnc/releases/download/5.03/NVEncC_5.03_Win32.7z",
+            "hash": "14205d67259f14ed2e51699235f65293e43666a0ec12311058b642bdb3a31ee8",
             "bin": [
                 [
                     "NVEncC32.exe",
