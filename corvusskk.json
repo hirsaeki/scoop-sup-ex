@@ -1,11 +1,11 @@
 {
-    "version": "2.7.12",
+    "version": "2.8.0",
     "description": "Japanese skk like IME.",
     "homepage": "https://github.com/nathancorvussolis/corvusskk",
     "checkver": "github",
     "license": "MS-PL",
-    "url": "https://github.com/nathancorvussolis/corvusskk/releases/download/2.7.12/corvusskk-2.7.12.exe#/setup.exe",
-    "hash": "a92a3e95ec4443a3fcfab87e4a75a17a67c254a970e6893a6ff9a1c1e78afb04",
+    "url": "https://github.com/nathancorvussolis/corvusskk/releases/download/2.8.0/corvusskk-2.8.0.exe#/setup.exe",
+    "hash": "11e301dfaed385e1a8e72c58aaf255fc86c16cfa82a9b0a0bf348402f67d7671",
     "installer": {
         "file": "setup.exe",
         "args": "/quiet",
