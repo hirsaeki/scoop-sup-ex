@@ -8,7 +8,7 @@
         "64bit": {
             "url": "https://github.com/rigaya/NVEnc/releases/download/5.14/NVEncC_5.14_x64.7z",
             "hash": "7578698aac60eb8e9a21c7901ac0db38b2477424ea0d863391b81c9d6c16422d",
-            "extract_dir": "",
+            "extract_dir": "NVEncC_5.14_x64",
             "bin": [
                 [
                     "NVEncC64.exe",
@@ -19,7 +19,7 @@
         "32bit": {
             "url": "https://github.com/rigaya/NVEnc/releases/download/5.14/NVEncC_5.14_Win32.7z",
             "hash": "77595182bd2fac7747f2a951c549968c4a0d855a3c664ef678fbf81d430ffeca",
-            "extract_dir": "",
+            "extract_dir": "NVEncC_5.14_Win32",
             "bin": [
                 [
                     "NVEncC32.exe",
@@ -31,12 +31,12 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "extract_dir": "NVEncC_$version_x64",
-                "url": "https://github.com/rigaya/NVEnc/releases/download/$version/NVEncC_$version_x64.7z"
+                "url": "https://github.com/rigaya/NVEnc/releases/download/$version/NVEncC_$version_x64.7z",
+                "extract_dir": "NVEncC_$version_x64"
             },
             "32bit": {
-                "extract_dir": "NVEncC_$version_Win32",
-                "url": "https://github.com/rigaya/NVEnc/releases/download/$version/NVEncC_$version_Win32.7z"
+                "url": "https://github.com/rigaya/NVEnc/releases/download/$version/NVEncC_$version_Win32.7z",
+                "extract_dir": "NVEncC_$version_Win32"
             }
         }
     }
