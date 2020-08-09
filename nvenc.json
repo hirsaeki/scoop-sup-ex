@@ -8,6 +8,7 @@
         "64bit": {
             "url": "https://github.com/rigaya/NVEnc/releases/download/5.14/NVEncC_5.14_x64.7z",
             "hash": "7578698aac60eb8e9a21c7901ac0db38b2477424ea0d863391b81c9d6c16422d",
+            "extract_dir": "",
             "bin": [
                 [
                     "NVEncC64.exe",
@@ -18,6 +19,7 @@
         "32bit": {
             "url": "https://github.com/rigaya/NVEnc/releases/download/5.14/NVEncC_5.14_Win32.7z",
             "hash": "77595182bd2fac7747f2a951c549968c4a0d855a3c664ef678fbf81d430ffeca",
+            "extract_dir": "",
             "bin": [
                 [
                     "NVEncC32.exe",
