@@ -1,0 +1,42 @@
+{
+    "version": "7.1.3",
+    "description": "ultradefrag",
+    "homepage": "https://sourceforge.net/projects/ultradefrag/",
+    "checkver": {
+        "url": "https://sourceforge.net/projects/ultradefrag/files/stable-release/",
+        "regex": "/stable-release/([\\d.-]+)/ultradefrag-"
+    },
+    "license": "GPL",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.sourceforge.net/project/ultradefrag/stable-release/7.1.3/ultradefrag-portable-7.1.3.bin.amd64.zip",
+            "hash": "",
+            "extract_dir": "ultradefrag-portable-7.1.3.amd64",
+            "bin": ["ultradefrag.exe"],
+            "shortcuts": [
+                ["ultradefrag.exe", "UltraDefrag"]
+            ]
+        },
+        "32bit": {
+            "url": "https://downloads.sourceforge.net/project/ultradefrag/stable-release/7.1.3/ultradefrag-portable-7.1.3.bin.i386.zip",
+            "hash": "",
+            "extract_dir": "ultradefrag-portable-7.1.3.i386",
+            "bin": ["ultradefrag.exe"],
+            "shortcuts": [
+                ["ultradefrag.exe", "UltraDefrag"]
+            ]
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.sourceforge.net/project/ultradefrag/stable-release/$version/ultradefrag-portable-$version.bin.amd64.zip",
+                "extract_dir": "ultradefrag-portable-$version.amd64"
+            },
+            "32bit": {
+                "url": "https://downloads.sourceforge.net/project/ultradefrag/stable-release/$version/ultradefrag-portable-$version.bin.i386.zip",
+                "extract_dir": "ultradefrag-portable-$version.i386"
+            }
+        }
+    }
+}
