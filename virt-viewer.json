@@ -16,7 +16,7 @@
     },
     "bin": [
         [
-            "remote-viewer.exe",
+            "bin\\remote-viewer.exe",
             "remote-viewer"
         ]
     ],
