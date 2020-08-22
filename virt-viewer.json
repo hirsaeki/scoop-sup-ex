@@ -22,7 +22,7 @@
     ],
     "shortcuts": [
         [
-            "bin\\remote-vierwer.exe",
+            "bin\\remote-viewer.exe",
             "Virt Remote Viewer",
             "",
             "remote-viewer.ico"
