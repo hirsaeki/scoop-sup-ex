@@ -7,6 +7,12 @@
   "extract_dir": "SSH Tunnel Manager",
   "hash": "493DF904145C639285F3B756A94DFE0EAF063767B03239A90E31839DD7FCC6EB",
   "bin": "SSHTunnelManagerGUI.exe",
+  "depends": ["putty"],
+  "pre_install": [
+    "cd $dir\\tools",
+    "Rename-Item -Path .\\plink.exe -NewName plink_bundled.exe",
+    "New-Item -Path . -Name plink.exe -Value $scoopdir\\apps\\putty\\current\\plink.exe -ItemType SymbolicLink"
+  ],
   "shortcuts": [
     [
       "SSHTunnelManagerGUI.exe",
