@@ -1,11 +1,11 @@
 {
-    "version": "4.43",
+    "version": "4.44",
     "description": "keep desktop window persistent",
     "homepage": "https://github.com/kangyu-california/PersistentWindows",
     "checkver": "github",
     "license": "MS-PL",
-    "url": "https://github.com/kangyu-california/PersistentWindows/releases/download/4.43/PersistentWindows4.43.zip",
-    "hash": "fabb653653d334c9c80f22581aa2c471a57595c173049e96827457cd99ecd5e9",
+    "url": "https://github.com/kangyu-california/PersistentWindows/releases/download/4.44/PersistentWindows4.44.zip",
+    "hash": "90c2df662ecc4942bad749c18c7bdd81c37ea5899e82b74fb222d4ac49ea8878",
     "bin": "PersistentWindows.exe",
     "shortcuts": [
         [
