@@ -4,6 +4,7 @@
     "homepage": "https://github.com/rigaya/NVEnc",
     "checkver": "github",
     "license": "MIT",
+    "pre_install": "if(test-path \"$dir\\NVEncC*\" -PathType Container) { Move-Item \"$dir\\NVEnc_*\\*\" \"$dir\" | Out-Null }",
     "architecture": {
         "64bit": {
             "url": "https://github.com/rigaya/NVEnc/releases/download/5.16/NVEncC_5.16_x64.7z",
