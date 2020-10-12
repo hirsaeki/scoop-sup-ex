@@ -5,6 +5,7 @@
     "checkver": "github",
     "license": "MIT",
     "url": "https://github.com/nekopanda/Amatsukaze/releases/download/0.9.1.3/Amatsukaze_0.9.1.3.7z",
+    "extract_dir": "Amatsukaze"
     "hash": "8082ceb4ff097c687a589cf3ef650f2b6f9f384634e0f41f597301c18fe85e77",
     "bin": [
         "Amatsukaze.vbs",
