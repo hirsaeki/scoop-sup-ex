@@ -1,0 +1,19 @@
+{
+    "homepage": "http://vb45wb5b.seesaa.net/",
+    "description": "niconico to Ass",
+    "license": "Freeware",
+    "version": "1.40",
+    "url": "https://vb45wb5b.up.seesaa.net/image/NicoConvAss_1.40.zip",
+    "hash": "",
+    "bin": "NicoconvAss.exe",
+    "persist": [
+        "NicoConvAss.ini"
+    ],
+    "checkver": {
+        "url": "https://vb45wb5b.seesaa.net",
+        "regex": "NicoConvAss_([\\d.]+)\\.zip"
+    },
+    "autoupdate": {
+        "url": "https://vb45wb5b.up.seesaa.net/image/NicoConvAss_$version.zip"
+    }
+}
