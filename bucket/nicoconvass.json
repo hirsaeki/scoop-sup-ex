@@ -10,7 +10,7 @@
         "NicoConvAss.ini"
     ],
     "checkver": {
-        "url": "https://vb45wb5b.seesaa.net",
+        "url": "http://vb45wb5b.seesaa.net",
         "regex": "NicoConvAss_([\\d.]+)\\.zip"
     },
     "autoupdate": {
