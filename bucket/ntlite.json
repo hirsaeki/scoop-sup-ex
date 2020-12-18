@@ -10,7 +10,7 @@
         ]
     ],
     "depends": "innoextract",
-    "pre_install": "if(!(Test-Path \"$persist_dir\\settings.xml\")) {Set-Content -Encoding ASCII -Path \"$dir\\settings.xml\" -Value '<?xml version=\"1.0\" encoding=\"utf-8\"?><WebDAVClientSetting xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"></WebDAVClientSetting>'}",
+    "pre_install": "if(!(Test-Path \"$persist_dir\\settings.xml\")) {Set-Content -Encoding ASCII -Path \"$dir\\settings.xml\" -Value '<?xml version=\"1.0\" encoding=\"utf-8\"?>`r`n<GeneralOptions xmlns=\"urn:schemas-nliteos-com:pn.v1\">`r`n</GeneralOptions>'}",
     "installer": {
         "script": [
             "cd \"$dir\"",
