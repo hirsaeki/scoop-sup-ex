@@ -1,11 +1,11 @@
 {
-    "version": "5.7",
+    "version": "5.10",
     "description": "keep desktop window persistent",
     "homepage": "https://github.com/kangyu-california/PersistentWindows",
     "checkver": "github",
     "license": "MS-PL",
-    "url": "https://github.com/kangyu-california/PersistentWindows/releases/download/5.7/PersistentWindows5.7.zip",
-    "hash": "6b9cf4040f16963e700b70c27c533f7f810d0c0ef4af9c446598920711bd8114",
+    "url": "https://github.com/kangyu-california/PersistentWindows/releases/download/5.10/PersistentWindows5.10.zip",
+    "hash": "66e8f8cdf6bf90179ddfc256e45512ebaebdd56df273b5d1ec175ec250815e0d",
     "bin": "PersistentWindows.exe",
     "shortcuts": [
         [
