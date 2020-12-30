@@ -14,6 +14,5 @@
       "platform-tools\\etc1tool.exe",
       "platform-tools\\fastboot.exe",
       "platform-tools\\hprof-conv.exe"
-  ],
-  "checkver": "<h4.*>([\\d.]+) \\(.*\\)</h4>",
+  ]
 }
