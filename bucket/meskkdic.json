@@ -1,5 +1,5 @@
 {
-    "version": "2.3.0",
+    "version": "2.4.0",
     "description": "Merge and diff SKK Dict.",
     "homepage": "https://github.com/nathancorvussolis/meskkdic",
     "checkver": "github",
@@ -8,8 +8,8 @@
         "meskkdicw.exe"
     ],
     "license": "MS-PL",
-    "url": "https://github.com/nathancorvussolis/meskkdic/releases/download/2.3.0/meskkdic-2.3.0.zip",
-    "hash": "3eac615564c404845a29c01b32731752ab6fb79f77a321879794087917c454a8",
+    "url": "https://github.com/nathancorvussolis/meskkdic/releases/download/2.4.0/meskkdic-2.4.0.zip",
+    "hash": "2b7dcbdb9f38b6b7db08bf1ce672bfa6495ab9acad950f2851cef360aecba3d7",
     "autoupdate": {
         "url": "https://github.com/nathancorvussolis/meskkdic/releases/download/$version/meskkdic-$version.zip"
     }
