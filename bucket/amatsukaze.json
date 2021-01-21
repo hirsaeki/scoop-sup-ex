@@ -1,12 +1,12 @@
 {
-    "version": "0.9.1.3",
+    "version": "0.9.1.4",
     "description": "Automated MPEG2-TS Transcoder",
     "homepage": "https://github.com/nekopanda/Amatsukaze",
     "checkver": "github",
     "license": "MIT",
-    "url": "https://github.com/nekopanda/Amatsukaze/releases/download/0.9.1.3/Amatsukaze_0.9.1.3.7z",
+    "url": "https://github.com/nekopanda/Amatsukaze/releases/download/0.9.1.4/Amatsukaze_0.9.1.4.7z",
     "extract_dir": "Amatsukaze",
-    "hash": "8082ceb4ff097c687a589cf3ef650f2b6f9f384634e0f41f597301c18fe85e77",
+    "hash": "3cb21b433827220c52f72e68dab657f0a15a34a7fbf49caae5f9a1642425a133",
     "bin": [
         "Amatsukaze.vbs",
         "AmatsukazeClient.vbs",
