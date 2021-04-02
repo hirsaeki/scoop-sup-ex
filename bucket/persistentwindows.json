@@ -7,7 +7,7 @@
     "url": "https://github.com/kangyu-california/PersistentWindows/releases/download/5.20/PersistentWindows5.20.zip",
     "hash": "e91c78577a348daf2158296f627f1e5f480d72a7d5dc3462a4f3ffdd29058a49",
     "bin": "PersistentWindows.exe",
-    "pre_install": "taskkill /im PersistentWindows.exe",
+    "pre_install": "gsudo taskkill /im PersistentWindows.exe",
     "shortcuts": [
         [
             "PersistentWindows.exe",
