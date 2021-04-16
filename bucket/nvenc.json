@@ -1,5 +1,5 @@
 {
-    "version": "5.29",
+    "version": "5.30",
     "description": "nvencc",
     "homepage": "https://github.com/rigaya/NVEnc",
     "checkver": "github",
@@ -7,8 +7,8 @@
     "pre_install": "if(test-path \"$dir\\NVEncC*\" -PathType Container) { Move-Item \"$dir\\NVEncC*\\*\" \"$dir\" | Out-Null }",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/rigaya/NVEnc/releases/download/5.29/NVEncC_5.29_x64.7z",
-            "hash": "0396c1e01ccc77d814773847fda5ec1f7ef142911bc5e519ac59c2f6ad9f3089",
+            "url": "https://github.com/rigaya/NVEnc/releases/download/5.30/NVEncC_5.30_x64.7z",
+            "hash": "f69893926d9e7d00bbcb17a4f31e9271437c6bc13122045b2aa5f5e7711ffd4e",
             "bin": [
                 [
                     "NVEncC64.exe",
@@ -17,8 +17,8 @@
             ]
         },
         "32bit": {
-            "url": "https://github.com/rigaya/NVEnc/releases/download/5.29/NVEncC_5.29_Win32.7z",
-            "hash": "f0212cbb3116dba133720d8429755c5d9949ed77bd0590715a665ff303b80b78",
+            "url": "https://github.com/rigaya/NVEnc/releases/download/5.30/NVEncC_5.30_Win32.7z",
+            "hash": "c3605a1f3f3906f64117d4e0927c3084c4dcc44f7edc4fa4b5fc35033bcf4a1d",
             "bin": [
                 [
                     "NVEncC32.exe",
