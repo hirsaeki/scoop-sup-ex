@@ -13,7 +13,10 @@
         "AmatsukazeServer.vbs"
     ],
     "persist": [
-        "config"
+        "config",
+        "profile",
+        "JL",
+        "avs"
     ],
     "autoupdate": {
         "url": "https://github.com/nekopanda/Amatsukaze/releases/download/$version/Amatsukaze_$version.7z"
