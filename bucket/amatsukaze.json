@@ -17,7 +17,8 @@
         "profile",
         "JL",
         "drcs",
-        "avs"
+        "avs",
+        "logo"
     ],
     "autoupdate": {
         "url": "https://github.com/nekopanda/Amatsukaze/releases/download/$version/Amatsukaze_$version.7z"
