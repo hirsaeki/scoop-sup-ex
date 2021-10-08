@@ -35,7 +35,7 @@
     "homepage": "https://virt-manager.org/download/",
     "checkver": {
         "url": "",
-        "regex": "virt-viewer ([\\d.-]+)</a>",
+        "regex": "virt-viewer-x86-([\\d.-]+)\\.msi",
         "reverse": true
     },
     "autoupdate": {
