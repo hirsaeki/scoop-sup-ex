@@ -1,8 +1,8 @@
 {
     "homepage": "https://www.ntlite.com/",
-    "version": "2.3.4.8620",
+    "version": "2.3.4.8640",
     "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe",
-    "hash": "d169129b534dd71ee3cc71d4313ecc1dfc4e25fb3b7c815594a2e38adabaa602",
+    "hash": "cf50c1d66db51c88ecc9eb10673a64744f72bc5180fc6e12d85619f46b18075a",
     "shortcuts": [
         [
             "NTLite.exe",
