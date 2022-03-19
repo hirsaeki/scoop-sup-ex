@@ -3,8 +3,8 @@
   "url": "http://www.steve.org.uk/Software/bash/bash-203.zip",
   "extract_dir": "bash-2.03",
   "bin": [
-    "ls.exe",
-    "less.exe",
-    "lesskey.exe"
+    "bash-2.03\\ls.exe",
+    "bash-2.03\\less.exe",
+    "bash-2.03\\lesskey.exe"
   ]
 }
