@@ -1,0 +1,9 @@
+{
+  "version": "2.03",
+  "url": "http://www.steve.org.uk/Software/bash/bash-203.zip",
+  "bin": [
+    "ls.exe",
+    "less.exe",
+    "lesskey.exe"
+  ]
+}
