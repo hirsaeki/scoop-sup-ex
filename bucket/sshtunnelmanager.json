@@ -10,8 +10,7 @@
   "depends": ["putty"],
   "post_install": [
     "cd $dir\\tools",
-    "Rename-Item -Path .\\plink.exe -NewName plink_bundled.exe",
-    "gsudo New-Item -Path . -Name plink.exe -Value $scoopdir\\apps\\putty\\current\\plink.exe -ItemType SymbolicLink"
+    "Get-ChildItem *.exe | ForEach-Object { Rename-Item -Path \".\\$($_.Name)\" -NewName \"$($_.BaseName)_bundled.exe\"; gsudo New-Item -Path . -Name \"$($_.Name)\" -Value \"$scoopdir\\apps\\putty\\current\\$($_.Name)\" -ItemType SymbolicLink}"
   ],
   "shortcuts": [
     [
