@@ -8,13 +8,17 @@
     "hash": "7f6864e51c2342d348a32f0a871dd2e7bbadf9cc5c997574b851dad09704204f",
     "installer": {
         "file": "setup.exe",
-        "args": "/quiet",
+        "args": [
+            "/quiet",
+            "/norestart"
+        ],
         "keep": "true"
     },
     "uninstaller": {
         "file": "setup.exe",
         "args": [
             "/uninstall",
+            "/norestart",
             "/quiet"
         ]
     },
