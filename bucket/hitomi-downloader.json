@@ -1,8 +1,7 @@
 {
-    "version": "3.7",
+    "version": "v3.7m",
     "description": "Simple Web content downloader",
     "homepage": "https://github.com/KurtBestor/Hitomi-Downloader",
-    "checkver": "github",
     "license": "MS-PL",
     "url": "https://github.com/KurtBestor/Hitomi-Downloader/releases/download/3.7/hitomi_downloader_GUI.zip",
     "hash": "",
@@ -14,6 +13,10 @@
             "hitomi_downloader_GUI"
         ]
     ],
+    "checkver": {
+        "url": "https://api.github.com/repos/KurtBestor/Hitomi-Downloader/releases",
+        "jsonpath": "$[0].tag_name"
+    },
     "autoupdate": {
         "url": "https://github.com/KurtBestor/Hitomi-Downloader/releases/download/$version/hitomi_downloader_GUI.zip"
     }
